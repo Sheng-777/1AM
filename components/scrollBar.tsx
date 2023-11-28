@@ -1,59 +1,39 @@
-export default function ScrollBar(){
-    return(
-<div className="flex flex-col bg-white m-auto p-auto">
-<h1
-        className="flex py-5 lg:px-20 md:px-10 px-5 lg:mx-40 md:mx-20 mx-5 font-bold text-4xl text-gray-800"
-      >
-        Example
-      </h1>
-      <div
-        className="flex overflow-x-scroll pb-10 hide-scroll-bar"
-      >
-        <div
-          className="flex flex-nowrap lg:ml-40 md:ml-20 ml-10 "
-        >
-          <div className="inline-block px-3">
-            <div
-              className="w-64 h-64 max-w-xs overflow-hidden rounded-lg shadow-md bg-white hover:shadow-xl transition-shadow duration-300 ease-in-out"
-            ></div>
-          </div>
-          <div className="inline-block px-3">
-            <div
-              className="w-64 h-64 max-w-xs overflow-hidden rounded-lg shadow-md bg-white hover:shadow-xl transition-shadow duration-300 ease-in-out"
-            ></div>
-          </div>
-          <div className="inline-block px-3">
-            <div
-              className="w-64 h-64 max-w-xs overflow-hidden rounded-lg shadow-md bg-white hover:shadow-xl transition-shadow duration-300 ease-in-out"
-            ></div>
-          </div>
-          <div className="inline-block px-3">
-            <div
-              className="w-64 h-64 max-w-xs overflow-hidden rounded-lg shadow-md bg-white hover:shadow-xl transition-shadow duration-300 ease-in-out"
-            ></div>
-          </div>
-          <div className="inline-block px-3">
-            <div
-              className="w-64 h-64 max-w-xs overflow-hidden rounded-lg shadow-md bg-white hover:shadow-xl transition-shadow duration-300 ease-in-out"
-            ></div>
-          </div>
-          <div className="inline-block px-3">
-            <div
-              className="w-64 h-64 max-w-xs overflow-hidden rounded-lg shadow-md bg-white hover:shadow-xl transition-shadow duration-300 ease-in-out"
-            ></div>
-          </div>
-          <div className="inline-block px-3">
-            <div
-              className="w-64 h-64 max-w-xs overflow-hidden rounded-lg shadow-md bg-white hover:shadow-xl transition-shadow duration-300 ease-in-out"
-            ></div>
-          </div>
-          <div className="inline-block px-3">
-            <div
-              className="w-64 h-64 max-w-xs overflow-hidden rounded-lg shadow-md bg-white hover:shadow-xl transition-shadow duration-300 ease-in-out"
-            ></div>
+export default function ScrollBar() {
+    const posts: any[] = [
+      {id: "1"},
+      {id: "2"},
+      {id: "3"},
+      {id: "4"},
+      {id: "5"},
+      {id: "6"},
+      {id: "7"},
+    ]
+
+
+    return (
+      <main className="w-full h-full overflow-hidden">
+        <div className="m-6 mr-0 flex flex-col gap-4">
+          <h1 className="font-bold text-4xl text-gray-800 w-fit">Example</h1>
+          <div className="flex flex-row gap-4 overflow-x-scroll no-scrollbar">
+            {posts.map((id: any) => (
+                   <div
+                     key={id} className="w-64 h-64 shrink-0 rounded-lg shadow-md bg-white hover:shadow-xl transition-shadow duration-300 ease-in-out">
+                    </div>
+            ))}
           </div>
         </div>
-      </div>
-</div>
+      {/* 
+      <main className="bg-red-100 h-full w-full">
+        <h1 className="m-5 font-bold text-4xl text-gray-800 bg-blue-100 w-fit">Example</h1>
+        <div className="flex gap-6 overflow-x-auto">
+          {posts.map((id: any) => (
+                  <div
+                    key={id }className="w-64 h-64 max-w-xs overflow-hidden rounded-lg shadow-md bg-white hover:shadow-xl transition-shadow duration-300 ease-in-out">
+                  </div>
+          ))}
+        </div>
+      </main>
+      */}
+      </main>
     )
 }
