@@ -8,10 +8,10 @@ const inter = Inter({ subsets: ['latin'] })
 export default function Home() {
   return (
     <main>
-      <div className='float-container'>
-        <SideNavBar/>
-        <ScrollBar/>
-        </div>
+      <div className='grid grid-flow-col grid-cols-max overflow-hidden'>
+        <div><SideNavBar/></div>
+        <div className='overflow-auto'><ScrollBar/></div>
+      </div>
     </main>
   )
 }

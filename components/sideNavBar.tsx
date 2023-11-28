@@ -15,7 +15,7 @@ export default function SideNavBar(){
     </a>
 
     <div className="flex flex-col justify-between flex-1 mt-6">
-        <nav className="flex-1 -mx-3 space-y-3 ">
+        <nav className="flex-1 -mx=-3 space-y-3 ">
             <div className="relative mx-3">
                 <span className="absolute inset-y-0 left-0 flex items-center pl-3">
                     <svg className="w-5 h-5 text-gray-400" viewBox="0 0 24 24" fill="none">
