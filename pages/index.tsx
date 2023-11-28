@@ -9,8 +9,8 @@ export default function Home() {
   return (
     <main>
       <div className='grid grid-flow-col grid-cols-max overflow-hidden'>
-        <div><SideNavBar/></div>
-        <div className='overflow-auto'><ScrollBar/></div>
+        <div className=''><SideNavBar/></div>
+        <div className='overflow-scroll'><ScrollBar/></div>
       </div>
     </main>
   )
