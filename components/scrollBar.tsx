@@ -12,13 +12,11 @@ export default function ScrollBar() {
             <h1 className="text-4xl font-light text-gray-800 dark:text-gray-200 w-fit">{board}</h1>
             <div className="flex flex-row gap-4 overflow-x-scroll no-scrollbar py-2 pr-6">
               {posts.map(post => {
-                console.log(board)
-                console.log(post.board)
                 if (post.board === board) {
                   return ( 
                     <div key={post.id}>
                       <Link href={`/posts/${post.id}`}>
-                      <div className="w-64 h-64 rounded-lg overflow-hidden shrink-0 shadow-md bg-white dark:bg-gray-600 hover:shadow-gray-500 transition-shadow duration-300 ease-in-out">
+                      <div className="w-64 h-64 rounded-lg overflow-hidden shrink-0 shadow-md bg-white dark:bg-gray-600 hover:shadow-gray-500 dark:hover:shadow-black transition-shadow duration-300 ease-in-out">
                           <Post post={post} className="w-64 h-64"></Post>
                       </div>
                       </Link>
