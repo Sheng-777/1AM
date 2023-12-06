@@ -1,24 +1,22 @@
+import Link from "next/link";
+import Post from "./Post";
+import { posts } from "./objects/posts"
+import Image from "next/image"
+
 export default function ScrollBar() {
-    const posts: any[] = [
-      {id: "1"},
-      {id: "2"},
-      {id: "3"},
-      {id: "4"},
-      {id: "5"},
-      {id: "6"},
-      {id: "7"},
-    ]
-
-
     return (
       <main className="w-full h-full overflow-hidden">
         <div className="m-6 mr-0 flex flex-col gap-4">
-          <h1 className="font-bold text-4xl text-gray-800 w-fit">Example</h1>
+          <h1 className="font-bold text-4xl text-gray-800 dark:text-gray-200 w-fit">Example</h1>
           <div className="flex flex-row gap-4 overflow-x-scroll no-scrollbar">
-            {posts.map((id: any) => (
-                   <div
-                     key={id} className="w-64 h-64 shrink-0 rounded-lg shadow-md bg-white hover:shadow-xl transition-shadow duration-300 ease-in-out">
-                    </div>
+            {posts.map(post => (
+              <div key={post.id}>
+                  <Link href={`/posts/${post.id}`}>
+                  <div className="w-64 h-64 rounded-lg overflow-hidden shrink-0 shadow-md bg-white dark:bg-gray-600 hover:shadow-xl transition-shadow duration-300 ease-in-out">
+                      <Post post={post}></Post>
+                  </div>
+                  </Link>
+              </div>
             ))}
           </div>
         </div>

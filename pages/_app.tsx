@@ -1,5 +1,5 @@
 import Layout from '@/components/Layout'
-import SideNavBar from '@/components/sideNavBar'
+import SideNavBar from '@/components/SideNavBar'
 import '@/styles/globals.css'
 import type { AppProps } from 'next/app'
 

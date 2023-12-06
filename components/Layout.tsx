@@ -1,11 +1,15 @@
-import { ReactNode } from "react";
-import SideNavBar from "./sideNavBar";
+import { ReactNode, useEffect, useState } from "react";
+import SideNavBar from "./SideNavBar";
 
 interface LayoutProps {
     children: ReactNode;
   }
 
 const Layout: React.FC<LayoutProps> = ({ children }) => {
+  // For Dark Mode
+  
+
+
     return (
       <div className="flex">
         {/* Render SideBar */}
