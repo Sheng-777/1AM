@@ -6,8 +6,8 @@ export default function Post({post}: any) {
         <Image 
             src={`/temp_images/${post.src}`} 
             alt="temp outfit" 
-            width={256} 
-            height={256} 
+            width={600} 
+            height={600}
             priority 
             className="rounded-lg"/>
     )

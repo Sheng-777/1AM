@@ -6,7 +6,7 @@ export default function SideNavBar(){
     const router = useRouter();
     
     return (
-    <main className="w-64 bg-white dark:bg-gray-700 p-4 h-screen">
+    <main className="w-64 bg-white dark:bg-gray-700 p-4 h-screen grid content-between">
         <ul className="flex flex-col gap-2">
             <li className="pb-4">
                 <div className="relative">
@@ -59,7 +59,7 @@ export default function SideNavBar(){
         </ul>
 
         {/* Dw bout this for now lolllll */}
-        <div className="mt-6">
+        <div>
             <div className="p-3 bg-gray-100 rounded-lg dark:bg-gray-800">
                 <h2 className="text-sm font-medium text-gray-800 dark:text-white">New feature availabel!</h2>
 
@@ -83,6 +83,6 @@ export default function SideNavBar(){
                 </div>
             </div>
         </div>
-</main>
+    </main>
     )
 }

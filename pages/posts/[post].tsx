@@ -2,7 +2,7 @@ import React from "react";
 import Link from "next/link";
 import { useRouter } from "next/router";
 
-export default function TestPost(){
+export default function PostPage(){
     const router = useRouter();
     const postID = router.query.post;
 
