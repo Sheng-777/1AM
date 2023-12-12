@@ -21,7 +21,7 @@ export default function ScrollBar() {
                 if (post.board === board) {
                   return ( 
                     <div key={post.id}>
-                      <Link href={`/posts/${post.id}`}>
+                      <Link href={`/boards/${board}/${post.id}`}>
                       <div className="w-64 h-64 rounded-lg overflow-hidden shrink-0 shadow-md bg-white dark:bg-gray-600 hover:shadow-gray-500 dark:hover:shadow-black transition-shadow duration-300 ease-in-out">
                           <Post post={post} className="w-64 h-64 object-cover"></Post>
                       </div>

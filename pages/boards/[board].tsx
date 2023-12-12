@@ -19,7 +19,7 @@ export default function PostPage(){
                 if (post.board === boardID) {
                   return ( 
                     <div key={post.id}>
-                      <Link href={`/posts/${post.id}`}>
+                      <Link href={`${boardID}/${post.id}`}>
                       <div className="w-auto h-auto mb-4 rounded-lg overflow-hidden shrink-0 shadow-md bg-white dark:bg-gray-600 hover:shadow-gray-500 dark:hover:shadow-black transition-shadow duration-300 ease-in-out">
                           <Post post={post} className="w-auto h-auto object-cover" ></Post>
                       </div>
