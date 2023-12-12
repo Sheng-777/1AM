@@ -17,7 +17,7 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
           <SideNavBar/>
         </div>
         {/* Render Page */}
-        <div className="w-[calc(100vw_-_256px)] h-screen">
+        <div className="w-[calc(100vw_-_256px)] h-screen overflow-hidden">
           {children}
         </div>
       </div>

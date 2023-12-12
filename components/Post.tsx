@@ -9,6 +9,6 @@ export default function Post({post}: any) {
             width={600} 
             height={600}
             priority 
-            className="rounded-lg"/>
+        />
     )
 }

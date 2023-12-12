@@ -7,7 +7,7 @@ export default function ScrollBar() {
   const boardNames = Object.keys(boards);
 
     return (
-      <main className="w-full h-full overflow-x-hidden overflow-y-scroll">
+      <main className="w-full h-full overflow-x-hidden">
         {boardNames.map((board: any) => (
           <div key={board} className="m-6 mr-0 flex flex-col gap-2">
             <Link href={`boards/${board}`}>
