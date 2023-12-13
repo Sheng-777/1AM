@@ -1,9 +1,11 @@
+import { signOut, useSession } from 'next-auth/react';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { HiMagnifyingGlass, HiOutlineBookmark, HiOutlineCog8Tooth, HiOutlineGlobeEuropeAfrica, HiOutlineHome, HiOutlineMoon, HiOutlineUsers, HiMiniArrowRightOnRectangle } from "react-icons/hi2";
 
 export default function SideNavBar(){
     const router = useRouter();
+    const {data: session }: any = useSession();
     
     return (
     <main className="w-64 bg-white dark:bg-gray-700 p-4 h-screen grid content-between">
@@ -59,30 +61,46 @@ export default function SideNavBar(){
         </ul>
 
         {/* Dw bout this for now lolllll */}
-        <div>
+        {/*<div>
             <div className="p-3 bg-gray-100 rounded-lg dark:bg-gray-800">
                 <h2 className="text-sm font-medium text-gray-800 dark:text-white">New feature availabel!</h2>
 
                 <p className="mt-1 text-xs text-gray-500 dark:text-gray-400">Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus harum officia eligendi velit.</p>
 
             </div>
-
+        </div>*/}
+            {
+                session && 
+            <>
             <div className="flex items-center justify-between mt-6">
                 <a href="#" className="flex items-center gap-x-2">
                     <img className="object-cover rounded-full h-7 w-7" src="https://images.unsplash.com/photo-1531427186611-ecfd6d936c79?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=634&h=634&q=80" alt="avatar" />
-                    <span className="text-sm font-medium text-gray-700 dark:text-gray-200">John Doe</span>
+                    <span className="text-sm font-medium text-gray-700 dark:text-gray-200">{`${session?.user?.fullName}`}</span>
                 </a>
                 <div className="flex gap-2">
                 <button className="text-gray-500 transition-colors duration-200 dark:text-gray-400 hover:text-blue-500 dark:hover:text-blue-400">
                     <HiOutlineMoon className="text-xl"/>
                 </button>
                 
-                <a href="#" className="text-gray-500 transition-colors duration-200 dark:text-gray-400 hover:text-blue-500 dark:hover:text-blue-400">
+                <button className="text-gray-500 transition-colors duration-200 dark:text-gray-400 hover:text-blue-500 dark:hover:text-blue-400"
+                        onClick={() => signOut()}
+                >
                     <HiMiniArrowRightOnRectangle className="text-xl"/>
-                </a>
+                </button>
                 </div>
             </div>
+            </>
+            }
+        {
+        !session && 
+        <>
+        <Link href={"/login"}>
+        <div className={`flex items-center px-2 py-2.5 text-gray-600 ${router.pathname === '/login' ? 'bg-gray-100 dark:bg-gray-800' : ''} transition-colors duration-300 rounded-lg dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 dark:hover:text-gray-200 hover:text-gray-700`}>
+            <span className="mx-2 text-sm font-medium">Sign In</span>
         </div>
+        </Link>
+        </>
+        }  
     </main>
     )
 }

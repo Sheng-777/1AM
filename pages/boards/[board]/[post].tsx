@@ -22,7 +22,12 @@ export default function PostPage(){
                 if (post.board === currentBoard) {
                   return ( 
                     <div key={post.id}>
-                      <Link href={`${currentBoard}/${post.id}`}>
+                      <Link href={
+                        {pathname : '/boards/[board]/[post]',
+                         query: {board: `${currentBoard}`, post: `${post.id}`}
+                      }
+                        
+                      }>
                       <div className="w-auto h-auto mb-3 rounded-lg overflow-hidden shrink-0 shadow-md bg-white dark:bg-gray-600 hover:shadow-gray-500 dark:hover:shadow-black transition-shadow duration-300 ease-in-out">
                           <Post post={post} className="w-auto h-auto object-cover" ></Post>
                       </div>

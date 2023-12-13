@@ -1,7 +1,6 @@
 import Image from 'next/image'
 import { Inter } from 'next/font/google'
-import SideNavBar from '@/components/SideNavBar'
-import ScrollBar from '@/components/ScrollBar'
+import ScrollBar from '@/components/scrollBar'
 
 const inter = Inter({ subsets: ['latin'] })
 
