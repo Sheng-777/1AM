@@ -16,7 +16,7 @@ export default function PostPage(){
         </div>
         <div className="columns-4 m-6 gap-4">
           {posts.map(post => {
-                if (post.board === boardID) {
+                if (post.board.includes(boardID)) {
                   return ( 
                     <div key={post.id}>
                       <Link href={`${boardID}/${post.id}`}>

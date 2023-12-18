@@ -7,9 +7,9 @@ import { posts } from "@/components/objects/fakeData";
 export default function PostPage(){
     const router = useRouter();
     const postID = Number(router.query.post);
-  
+
+    const currentBoard = router.query.board;  
     const currentPost = posts.find(post => post.id === postID);
-    const currentBoard = currentPost ? currentPost.board : null
 
     return(
       <div className="h-full">
@@ -19,7 +19,7 @@ export default function PostPage(){
             <p className="font-bold text-4xl text-gray-800 text-center">{currentPost?.title}</p>
             <div className="columns-3 m-3 gap-3">
             {posts.map(post => {
-                if (post.board === currentBoard) {
+                if (post.board.includes(currentBoard)) {
                   return ( 
                     <div key={post.id}>
                       <Link href={
@@ -42,8 +42,6 @@ export default function PostPage(){
             {postID ? (
               <Post post={currentPost} className="w-64 h-64 object-cover" />
             ) : null}
-
-            <div>{currentPost?.content}</div>
           </div>
         </div>
       </div>

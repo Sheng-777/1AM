@@ -18,7 +18,7 @@ export default function ScrollBar() {
             </Link>
             <div className="flex flex-row gap-4 overflow-x-scroll no-scrollbar py-2 pr-6">
               {posts.map(post => {
-                if (post.board === board) {
+                if (post.board.includes(board)) {
                   return ( 
                     <div key={post.id}>
                       <Link href={`/boards/${board}/${post.id}`}>
