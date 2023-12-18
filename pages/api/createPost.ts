@@ -19,6 +19,7 @@ const handler = async (req:NextApiRequest, res : NextApiResponse) => {
         }
 
         else{
+            
             Post.create({
                 id,
                 title,

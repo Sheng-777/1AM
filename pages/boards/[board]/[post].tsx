@@ -16,7 +16,7 @@ export default function PostPage(){
         <Link href={`/posts`}></Link>
         <div className="grid grid-cols-2 h-full">
           <div className="overflow-scroll no-scrollbar">
-            <p className="font-bold text-4xl text-gray-800 text-center">{currentPost.title}</p>
+            <p className="font-bold text-4xl text-gray-800 text-center">{currentPost?.title}</p>
             <div className="columns-3 m-3 gap-3">
             {posts.map(post => {
                 if (post.board === currentBoard) {
@@ -24,7 +24,7 @@ export default function PostPage(){
                     <div key={post.id}>
                       <Link href={
                         {pathname : '/boards/[board]/[post]',
-                         query: {board: `${currentBoard}`, post: `${post.id}`}
+                         query: {board: `${currentBoard}`, post: `${post?.id}`}
                       }
                         
                       }>
@@ -43,7 +43,7 @@ export default function PostPage(){
               <Post post={currentPost} className="w-64 h-64 object-cover" />
             ) : null}
 
-            <div>{currentPost.content}</div>
+            <div>{currentPost?.content}</div>
           </div>
         </div>
       </div>
