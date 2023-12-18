@@ -6,10 +6,6 @@ interface LayoutProps {
   }
 
 const Layout: React.FC<LayoutProps> = ({ children }) => {
-  // For Dark Mode
-  
-
-
     return (
       <div className="flex">
         {/* Render SideBar */}
