@@ -14,3 +14,9 @@ export interface LoginUserParams{
     email: string;
     password: string;
 }
+
+export interface IPost{
+    _id: string;
+    title: string;
+    content: string;
+}

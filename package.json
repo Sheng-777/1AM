@@ -10,15 +10,18 @@
   },
   "dependencies": {
     "@heroicons/react": "^2.0.18",
+    "@uploadthing/react": "^6.0.2",
     "axios": "^1.6.2",
     "bcryptjs": "^2.4.3",
+    "file-upload": "^0.0.0",
     "mongodb": "^6.3.0",
     "mongoose": "^8.0.3",
     "next": "14.0.3",
     "next-auth": "^4.24.5",
     "react": "^18",
     "react-dom": "^18",
-    "react-icons": "^4.12.0"
+    "react-icons": "^4.12.0",
+    "uploadthing": "^6.1.0"
   },
   "devDependencies": {
     "@types/bcryptjs": "^2.4.6",
