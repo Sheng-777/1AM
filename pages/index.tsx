@@ -1,4 +1,4 @@
-import ScrollBar from '@/components/ScrollBar'
+import ScrollBar from '@/components/scrollBar'
 import { Inter } from 'next/font/google'
 
 const inter = Inter({ subsets: ['latin'] })
