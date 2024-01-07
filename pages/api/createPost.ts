@@ -10,10 +10,10 @@ const handler = async (req:NextApiRequest, res : NextApiResponse) => {
     if (req.method === "POST"){
         if (!req.body) return res.status(400).json({error: "Data is missing"})
 
-        const {id,title,content} = req.body
-
-        const postExists = await Post.findOne({id})
-
+        const {id,source,boards} = req.body        
+        const newID = ((await Post.collection.countDocuments()) + 1).toString();
+        //console.log(newID)
+        const postExists = await Post.findOne({newID})
         if (postExists){
             res.status(409).json({error:"PostID Already Exists"})
         }
@@ -21,15 +21,15 @@ const handler = async (req:NextApiRequest, res : NextApiResponse) => {
         else{
             
             Post.create({
-                id,
-                title,
-                content
+                id : newID,
+                source,
+                boards
             }).then(async(data:IPost) => {
 
                 const post = {
                     _id : data._id,
-                    title : data.title,
-                    content : data.content,
+                    source : data.source,
+                    boards : data.boards,
                 }
 
                 return res.status(201).json({
@@ -47,6 +47,14 @@ const handler = async (req:NextApiRequest, res : NextApiResponse) => {
             })
         }
     }
+
+    if(req.method === "GET"){
+        return res.status(201).json({
+            success : true,
+            posts : await Post.collection.find().toArray()
+        })
+    }
+
     else{
         res.status(405).json({error: "Method Not Allowed"})
         res.end()

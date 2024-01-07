@@ -17,6 +17,6 @@ export interface LoginUserParams{
 
 export interface IPost{
     _id: string;
-    title: string;
-    content: string;
+    source: string;
+    boards: Array<string>;
 }

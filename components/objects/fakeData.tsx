@@ -4,8 +4,10 @@ export const boards: any = {
     'Board 3': 'Board 3',
   };
 
+
+
 export const posts: any[] = [
-    {id: 1, board: [boards['Board 1'], boards['Board 2']], src: "temp_1.jpeg", content: "FAKE CONTENT FOR POST 1 BLAH BLAH BLAH", title: "Post 1 Title"},
+    {id: 1, board: ["Board 1", "Board 2"], src: "temp_1.jpeg", content: "FAKE CONTENT FOR POST 1 BLAH BLAH BLAH", title: "Post 1 Title"},
     {id: 2, board: [boards['Board 3'], boards['Board 2']], src: "temp_2.jpeg", content: "FAKE CONTENT FOR POST 2 BLAH BLAH BLAH", title: "Post 2 Title"},
     {id: 3, board: [boards['Board 2'], boards['Board 3']], src: "temp_3.jpeg", content: "FAKE CONTENT FOR POST 3 BLAH BLAH BLAH", title: "Post 3 Title"},
     {id: 4, board: [boards['Board 1'], boards['Board 3']], src: "temp_4.jpeg", content: "FAKE CONTENT FOR POST 4 BLAH BLAH BLAH", title: "Post 4 Title"},
@@ -20,4 +22,5 @@ export const posts: any[] = [
     {id: 13, board: [boards['Board 1'], boards['Board 3']], src: "temp_13.jpeg", content: "FAKE CONTENT FOR POST 13 BLAH BLAH BLAH", title: "Post 13 Title"},
     {id: 14, board: [boards['Board 3'], boards['Board 2']], src: "temp_14.jpeg", content: "FAKE CONTENT FOR POST 14 BLAH BLAH BLAH", title: "Post 14 Title"},
     {id: 15, board: [boards['Board 2'], boards['Board 1']], src: "temp_15.jpeg", content: "FAKE CONTENT FOR POST 15 BLAH BLAH BLAH", title: "Post 15 Title"},
-]
+];
+

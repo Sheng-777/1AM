@@ -7,14 +7,14 @@ const PostSchema = new Schema ({
         required : [true, "ID is required"], 
     },
 
-    title : {
+    source : {
         type : String,
-        required : [true, "Title is required"]
+        required : [true, "Source is required"]
     },
 
-    content : {
-        type: String,
-        required : [true, "Content is required"],
+    boards : {
+        type: Array<string>,
+        required : [true, "Boards is required"],
     }
 })
 
