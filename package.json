@@ -11,6 +11,7 @@
   "dependencies": {
     "@heroicons/react": "^2.0.18",
     "@uploadthing/react": "^6.0.2",
+    "antd": "^5.12.8",
     "axios": "^1.6.2",
     "bcryptjs": "^2.4.3",
     "file-upload": "^0.0.0",
