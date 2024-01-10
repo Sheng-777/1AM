@@ -49,10 +49,11 @@ const handler = async (req:NextApiRequest, res : NextApiResponse) => {
     }
 
     if(req.method === "GET"){
-        return res.status(201).json({
+        res.status(201).json({
             success : true,
             posts : await Post.collection.find().toArray()
         })
+        res.end()
     }
 
     else{
