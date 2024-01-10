@@ -1,7 +1,10 @@
 export const boards: any = {
-    'board1': 'board1',
-    'board2': 'board2',
-    'board3': 'board3',
+    'Board 1': 'Board 1',
+    'Board 2': 'Board 2',
+    'Board 3': 'Board 3',
+    'Board 4': 'Board 4',
+    'Board 5': 'Board 5',
+    'Board 6': 'Board 6',
 };
 
 
