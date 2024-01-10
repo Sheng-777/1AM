@@ -18,16 +18,16 @@ const Testing = () => {
 
         displayPost()
 
-    },["http://localhost:3000/api/createPost"])
+    },[])
     
     console.log(posts)
+
     return(
         <div>
             {
-            
                 posts.map(post=>{
                     return(
-                        <div>
+                        <div key={post.id}>
                         <div>{post.id}</div>
                         <div>{post.source}</div>
                         <div>{post.boards}</div>

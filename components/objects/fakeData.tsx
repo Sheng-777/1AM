@@ -1,8 +1,8 @@
 export const boards: any = {
-    'Board 1': 'Board 1',
-    'Board 2': 'Board 2',
-    'Board 3': 'Board 3',
-  };
+    'board1': 'board1',
+    'board2': 'board2',
+    'board3': 'board3',
+};
 
 
 
