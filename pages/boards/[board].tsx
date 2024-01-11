@@ -1,12 +1,29 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Link from "next/link";
 import { useRouter } from "next/router";
-import { posts } from "@/components/objects/fakeData";
 import Post from "@/components/Post";
+import { fetchPosts } from "@/helpers";
 
-export default function PostPage(){
+export async function getServerSideProps() {
+  const postData = await fetchPosts();
+
+  return {
+    props: {
+      postData,
+    },
+  };
+}
+
+export default function BoardPage({postData}: any){
     const router = useRouter();
     const boardID = router.query.board;
+    const [posts, setPosts] = useState<any[]>([])
+
+    useEffect(() =>{
+        setPosts( postData )
+    },[postData, setPosts])
+    
+    console.log(posts)
 
     return(
       <div  className="w-full h-full overflow-scroll">
@@ -16,7 +33,8 @@ export default function PostPage(){
         </div>
         <div className="columns-4 m-6 gap-4">
           {posts.map(post => {
-                if (post.board.includes(boardID)) {
+                if (post.boards.includes(boardID)) {
+                  console.log(post.id)
                   return ( 
                     <div key={post.id}>
                       <Link href={`${boardID}/${post.id}`}>

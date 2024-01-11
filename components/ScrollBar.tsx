@@ -1,10 +1,21 @@
 import Link from "next/link";
 import Post from "./Post";
-import { posts, boards } from "./objects/fakeData"
+import { boards } from "./objects/fakeData"
 import { HiChevronRight } from "react-icons/hi2";
+import { useEffect, useState } from "react";
+import axios from "axios";
+import { fetchPosts } from "@/helpers";
 
-export default function ScrollBar() {
+export default function ScrollBar({postData}: any) {
   const boardNames = Object.keys(boards);
+
+  const [posts, setPosts] = useState<any[]>([])
+
+  useEffect(() =>{
+    setPosts(postData)
+  },[postData, setPosts])
+    
+    console.log(posts)
 
     return (
       <main className="w-full h-full overflow-x-hidden">
@@ -18,7 +29,7 @@ export default function ScrollBar() {
             </Link>
             <div className="flex flex-row gap-4 overflow-x-scroll no-scrollbar py-2 pr-6">
               {posts.map(post => {
-                if (post.board.includes(board)) {
+                if (post.boards.includes(board)) {
                   return ( 
                     <div key={post.id}>
                       <Link href={`/boards/${board}/${post.id}`}>

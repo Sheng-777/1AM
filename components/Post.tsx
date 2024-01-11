@@ -4,8 +4,8 @@ import Image from "next/image"
 export default function Post({post}: any) {
     return (
         <Image 
-            src={`/temp_images/${post.src}`} 
-            alt="temp outfit" 
+            src={`${post?.source}`} 
+            alt={`${post?.source}`}
             width={600} 
             height={600}
             priority 
