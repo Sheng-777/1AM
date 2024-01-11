@@ -14,7 +14,7 @@ export default function ScrollBar() {
     useEffect(() =>{
         const displayPost = async()=>{
             //console.log("Hiiiii")
-            const apiRes = await axios.get("http://localhost:3000/api/createPost")
+            const apiRes = await axios.get("https://www.rouge-co.com/api/createPost")
             const p =  apiRes?.data?.posts
             setPosts(p)
             //return apiRes

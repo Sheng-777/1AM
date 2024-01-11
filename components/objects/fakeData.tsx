@@ -7,8 +7,6 @@ export const boards: any = {
     'Board 6': 'Board 6',
 };
 
-
-
 export const posts: any[] = [
     {id: 1, board: ["Board 1", "Board 2"], src: "temp_1.jpeg", content: "FAKE CONTENT FOR POST 1 BLAH BLAH BLAH", title: "Post 1 Title"},
     {id: 2, board: [boards['Board 3'], boards['Board 2']], src: "temp_2.jpeg", content: "FAKE CONTENT FOR POST 2 BLAH BLAH BLAH", title: "Post 2 Title"},

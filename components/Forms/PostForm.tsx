@@ -3,14 +3,13 @@ import { useRouter } from 'next/router';
 import React, { useCallback, useState } from 'react';
 import { useDropzone } from 'react-dropzone';
 
-
-
 const PostForm = () => {
  const [formData, setFormData] = useState({
     id : '',
     source : '',
     boards : [''],
  });
+
 
  const availableBoard = [
     {id:1, label: "Board 1"},
@@ -19,7 +18,6 @@ const PostForm = () => {
     {id:4, label: "Board 4"},
     {id:5, label: "Board 5"},
     {id:6, label: "Board 6"},
-
  ]
     
 const [selectedItems, setSelectedItems] = useState(Array<string>)
@@ -122,11 +120,10 @@ async function handleOnSubmit() {
     if (isValid){
       try{
         setLoading(true)
-        console.log(formData)
-        const apiRes = await axios.post("http://localhost:3000/api/createPost", formData)
-        console.log(apiRes)
-        if (apiRes?.statusText === "OK"){
+        const apiRes = await axios.post("https://www.rouge-co.com/api/createPost", formData)
+        if (apiRes?.status === 200){
           // save data in session
+          //console.log(apiRes)
             router.push("/")
         }
 
