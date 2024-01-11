@@ -123,7 +123,7 @@ async function handleOnSubmit() {
       try{
         setLoading(true)
         const apiRes = await axios.post("http://localhost:3000/api/createPost", formData)
-        //console.log(apiRes)
+        console.log(apiRes)
         if (apiRes?.statusText === "OK"){
           // save data in session
             router.push("/")
