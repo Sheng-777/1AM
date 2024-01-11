@@ -3,14 +3,13 @@ import { useRouter } from 'next/router';
 import React, { useCallback, useState } from 'react';
 import { useDropzone } from 'react-dropzone';
 
-
-
 const SignUpForm = () => {
  const [formData, setFormData] = useState({
     id : '',
     source : '',
     boards : [''],
  });
+
 
  const availableBoard = [
     {id:1, label: "Board 1"},
