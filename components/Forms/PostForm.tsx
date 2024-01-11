@@ -3,7 +3,7 @@ import { useRouter } from 'next/router';
 import React, { useCallback, useState } from 'react';
 import { useDropzone } from 'react-dropzone';
 
-const SignUpForm = () => {
+const PostForm = () => {
  const [formData, setFormData] = useState({
     id : '',
     source : '',
@@ -18,7 +18,6 @@ const SignUpForm = () => {
     {id:4, label: "Board 4"},
     {id:5, label: "Board 5"},
     {id:6, label: "Board 6"},
-
  ]
     
 const [selectedItems, setSelectedItems] = useState(Array<string>)
@@ -211,4 +210,4 @@ async function handleOnSubmit() {
  );
 };
 
-export default SignUpForm;
+export default PostForm;
