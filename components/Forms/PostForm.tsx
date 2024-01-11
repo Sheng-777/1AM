@@ -120,10 +120,8 @@ async function handleOnSubmit() {
     if (isValid){
       try{
         setLoading(true)
-        console.log(formData)
 
         const apiRes = await axios.post("https://www.rouge-co.com/api/createPost", formData)
-        console.log(apiRes)
         if (apiRes?.status === 200){
           // save data in session
           //console.log(apiRes)
