@@ -121,10 +121,10 @@ async function handleOnSubmit() {
       try{
         setLoading(true)
         console.log(formData)
-        
+
         const apiRes = await axios.post("https://www.rouge-co.com/api/createPost", formData)
         console.log(apiRes)
-        if (apiRes?.statusText === "OK"){
+        if (apiRes?.statusText === "OK" || apiRes?.status === 200){
           // save data in session
           //console.log(apiRes)
             router.push("/")
