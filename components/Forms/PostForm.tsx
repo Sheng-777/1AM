@@ -5,7 +5,7 @@ import { useDropzone } from 'react-dropzone';
 
 
 
-const SignUpForm = () => {
+const PostForm = () => {
  const [formData, setFormData] = useState({
     id : '',
     source : '',
@@ -122,6 +122,7 @@ async function handleOnSubmit() {
     if (isValid){
       try{
         setLoading(true)
+        console.log(formData)
         const apiRes = await axios.post("http://localhost:3000/api/createPost", formData)
         console.log(apiRes)
         if (apiRes?.statusText === "OK"){
@@ -211,4 +212,4 @@ async function handleOnSubmit() {
  );
 };
 
-export default SignUpForm;
+export default PostForm;
