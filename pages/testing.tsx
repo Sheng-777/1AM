@@ -1,24 +1,22 @@
-import ScrollBar from '@/components/ScrollBar'
-import { displayPost } from '@/helpers'
-import axios from 'axios'
+import { fetchPosts } from '@/helpers'
 import { useEffect, useState } from 'react'
 
+export async function getServerSideProps() {
+    const postData = await fetchPosts();
+  
+    return {
+      props: {
+        postData,
+      },
+    };
+}
 
-const Testing = () => {
+const Testing = ({ postData }: any ) => {
     const [posts, setPosts] = useState<any[]>([])
 
     useEffect(() =>{
-        const displayPost = async()=>{
-            //console.log("Hiiiii")
-            const apiRes = await axios.get("https://www.rouge-co.com/api/createPost")
-            const p =  apiRes?.data?.posts
-            setPosts(p)
-            //return apiRes
-        }
-
-        displayPost()
-
-    },[])
+        setPosts( postData )
+    },[postData, setPosts])
     
     console.log(posts)
 
@@ -38,4 +36,5 @@ const Testing = () => {
         </div>
     )
 }
+
 export default Testing
