@@ -125,6 +125,7 @@ async function handleOnSubmit() {
         //console.log(apiRes)
         if (apiRes?.statusText === "OK"){
           // save data in session
+          console.log(apiRes)
             router.push("/")
         }
 
