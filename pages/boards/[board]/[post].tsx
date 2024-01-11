@@ -22,13 +22,11 @@ export default function PostPage({postData}: any){
     const [currentPost, setCurrentPost] = useState<any>()
 
     useEffect(() =>{
-      setPosts( postData )
+      setPosts(postData)
       console.log(postData)
       const post = posts.find(post => post.id === postID)
       setCurrentPost(post)
-    },[currentBoard, currentPost, postData, postID, posts, router.query.board, setPosts])
-
-
+    },[postData, postID, posts])
 
     return(
       <div className="h-full">
