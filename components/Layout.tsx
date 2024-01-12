@@ -28,7 +28,7 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
             </div>
         </Link>
         {/* Render Page */}
-        <div className="w-[calc(100vw_-_256px)] h-screen overflow-hidden">
+        <div className="w-[calc(100vw_-_256px)] h-screen overflow-scroll">
           {children}
         </div>
       </div>
