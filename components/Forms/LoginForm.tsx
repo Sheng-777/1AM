@@ -94,12 +94,15 @@ const LoginForm: React.FC = () => {
                     type="submit"
                     className="bg-blue-600 text-white py-2 px-4 rounded-md hover:bg-blue-700 transition duration-200 flex items-center"
                     disabled = {loading}
+                    title="Login"
                     >Login</button>
                 </div>
                 {<div className='pt-2 text-red-700'>{submitError}</div>}
 
                 <div>
-                    <button type="button" className="bg-blue-600 text-white py-2 px-4 rounded-md hover:bg-blue-700 transition duration-200 flex items-center" onClick={redirectToSignup}>
+                    <button type="button" className="bg-blue-600 text-white py-2 px-4 rounded-md hover:bg-blue-700 transition duration-200 flex items-center" onClick={redirectToSignup}
+                    title="SignUp"
+                    >
                     New User? Sign Up!
                     </button>
                 </div>

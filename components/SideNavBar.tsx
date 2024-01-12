@@ -84,6 +84,7 @@ export default function SideNavBar(){
                 
                 <button className="text-gray-500 transition-colors duration-200 dark:text-gray-400 hover:text-blue-500 dark:hover:text-blue-400"
                         onClick={() => signOut()}
+                        title="signOut"
                 >
                     <HiMiniArrowRightOnRectangle className="text-xl"/>
                 </button>
