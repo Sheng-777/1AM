@@ -158,7 +158,7 @@ async function handleOnSubmit() {
         <div key={board.id} className=''>
           <label className="">
             <input
-                id="boards"
+                id = {`board ${board.id}`}
                 name="boards"
                 type="checkbox"
                 value={board.label}
