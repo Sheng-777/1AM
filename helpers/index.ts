@@ -18,7 +18,7 @@ export const loginUser =async ({email, password} : LoginUserParams) => {
 }
 
 export const fetchPosts = async()=>{
-    const apiRes = await axios.get("http://localhost:3000/api/services/createPost")
+    const apiRes = await axios.get("https://www.rouge-co.com/api/services/createPost")
     const posts =  apiRes?.data?.posts
     return posts
 }
