@@ -2,6 +2,7 @@ import axios, { AxiosError } from 'axios';
 import { useRouter } from 'next/router';
 import React, { useCallback, useState } from 'react';
 import { useDropzone } from 'react-dropzone';
+import { HiChevronLeft } from 'react-icons/hi2';
 
 const PostForm = () => {
  const [formData, setFormData] = useState({
@@ -120,7 +121,7 @@ async function handleOnSubmit() {
     if (isValid){
       try{
         setLoading(true)
-        const apiRes = await axios.post("https://www.rouge-co.com/api/services/createPost", formData)
+        const apiRes = await axios.post("http://localhost:3000/api/services/createPost", formData)
         if (apiRes?.status === 200){
           // save data in session
           //console.log(apiRes)
@@ -144,8 +145,8 @@ async function handleOnSubmit() {
  
 
  return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-50 py-12 px-4 sm:px-6 lg:px-8">
-    <div className="max-w-md w-full space-y-8">
+    <div className="min-h-full flex items-center justify-center py-8 px-4 sm:px-6 lg:px-8">
+    <div className="max-w-md w-full space-y-8 ">
       <div>
         <h2 className="mt-6 text-center text-3xl font-extrabold text-gray-900">
           Create New Post
@@ -201,8 +202,6 @@ async function handleOnSubmit() {
         {errorMsg && <div className='pt-2 text-red-700'>{errorMsg}</div>}
         {submitError && <div className='pt-2 text-red-700'> {submitError} </div>}
       </div>
-
-      
     </form>
     </div>
     </div>
