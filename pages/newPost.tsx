@@ -189,27 +189,7 @@ async function handleOnSubmit() {
         </div>
         ))}
       </div>
-       
-      
-
-      
-      <div className="bg-green-100"> 
-            <div {...getRootProps()}>
-              <input {...getInputProps()} />
-              {
-                isDragActive ?
-                  <p>Drop the files here ...</p> :
-                  <p>Drag and drop some files here, or click to select files</p>
-              }
-            </div>
-          {preview && (
-            <p className="mb-5">
-              <img src={preview as string} alt="Upload preview" />
-            </p>
-          )}
-
-        </div>
-         */}
+        */}
 
         
 
