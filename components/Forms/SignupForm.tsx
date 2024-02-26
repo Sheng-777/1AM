@@ -51,7 +51,7 @@ const SignUpForm = () => {
     if (isValid){
       try{
         setLoading(true)
-        const apiRes = await axios.post("http://localhost:3000/api/services/auth/signup", formData)
+        const apiRes = await axios.post("https://www.rouge-co.com/api/auth/signup", formData)
         //console.log(apiRes)
         if (apiRes?.status === 200){
           // save data in session
@@ -166,6 +166,7 @@ const SignUpForm = () => {
           type="submit"
           className="group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
           disabled = {loading}
+          title="SignUp"
         >
           Sign up
         </button>
