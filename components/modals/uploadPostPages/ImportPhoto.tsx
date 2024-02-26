@@ -1,6 +1,10 @@
-import { HiOutlinePhoto } from 'react-icons/hi2';
+import { HiOutlineChevronRight, HiOutlinePhoto } from 'react-icons/hi2';
 
-const ImportPhoto = ({ preview, onDrop, acceptedFiles, getRootProps, getInputProps, isDragActive }: any) => {
+const ImportPhoto = ({ preview, onDrop, acceptedFiles, getRootProps, getInputProps, isDragActive, setStep, step }: any) => {
+    function handleNext() {
+        setStep(step + 1);
+    }
+
     const handlePhotoImport = () => {
         if (preview && isDragActive) {
             return (
@@ -12,9 +16,23 @@ const ImportPhoto = ({ preview, onDrop, acceptedFiles, getRootProps, getInputPro
             );
         } else if (preview) {
             return (
-                <p className="mb-5">
-                    <img src={preview as string} alt="Upload preview"/>
-                </p>
+                <div>
+                    <p className="mb-5">
+                        <img src={preview as string} alt="Upload preview"/>
+                    </p>
+                    <div className="flex justify-between items-center">
+                        <div {...getRootProps()}>
+                            <input {...getInputProps()} />
+                            <button className="text-gray-500 underline">
+                                Choose another photo
+                            </button>
+                        </div>
+                        <button onClick={handleNext} className="flex gap-1 items-center text-white bg-blue-500 rounded-md px-4 py-1">
+                            <p>Next</p>
+                            <HiOutlineChevronRight/>
+                        </button>
+                    </div>
+                </div>
             );
         } else {
             return (
@@ -29,16 +47,11 @@ const ImportPhoto = ({ preview, onDrop, acceptedFiles, getRootProps, getInputPro
 
     return (
         <div>
-        <div className="fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-white rounded-lg z-10 py-6 px-10">
             <div className="font-bold">
                 <h1>Upload Photo</h1>
             </div>
             <hr className="my-4"></hr>
                 {handlePhotoImport()}
-        </div>
-        <div className="bg-black inset-0 opacity-50 fixed">
-
-        </div>
         </div>
     )
 }

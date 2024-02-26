@@ -1,4 +1,4 @@
-import ImportPhoto from '@/components/modals/ImportPhoto';
+import UploadPost from '@/components/modals/UploadPost';
 import axios, { AxiosError } from 'axios';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
@@ -13,7 +13,7 @@ const PostForm = () => {
     boards : [''],
  });
 
-
+{/*
  const availableBoard = [
     {id:1, label: "Board 1"},
     {id:2, label: "Board 2"},
@@ -22,6 +22,7 @@ const PostForm = () => {
     {id:5, label: "Board 5"},
     {id:6, label: "Board 6"},
  ]
+ */}
     
 const [selectedItems, setSelectedItems] = useState(Array<string>)
 
@@ -139,9 +140,6 @@ async function handleOnSubmit() {
 
       setLoading(false)
     }
-    
-    
-    
  };
 
  
@@ -153,59 +151,21 @@ async function handleOnSubmit() {
                 <HiChevronLeft className="text-gray-600 text-4xl"/>
             </Link>
         </div>
-        <ImportPhoto
+        <UploadPost
             onDrop={onDrop}
             acceptedFiles={acceptedFiles}
             getRootProps={getRootProps}
             getInputProps={getInputProps}
             isDragActive={isDragActive}
             preview={preview}
+            formData={formData}
+            setFormData={setFormData}
+            handleCheckBoxChange={handleCheckBoxChange}
+            loadin={loading}
+            errorMsg={errorMsg}
+            submitError={submitError}
+            handleSubmit={handleSubmit}
         />
-    <div className="min-h-full flex flex-col items-center justify-center py-8 px-4 sm:px-6 lg:px-8">
-      {/*
-      <div>
-        <h2 className="mt-6 text-center text-3xl font-extrabold text-gray-900">
-          Create New Post
-        </h2>
-      </div>
- */}
-    <form className="mt-8 space-y-6" onSubmit={handleSubmit}>
-      {/*
-      <div className="rounded-md shadow-sm -space-y-px">
-
-        {availableBoard.map((board) => (
-        <div key={board.id} className=''>
-          <label className="">
-            <input
-                id="boards"
-                name="boards"
-                type="checkbox"
-                value={board.label}
-                onChange={handleCheckBoxChange}
-            />
-            {board.label}
-          </label>
-
-        </div>
-        ))}
-      </div>
-        */}
-
-        
-
-      <div>
-        <button
-          type="submit"
-          className="group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
-          disabled = {loading}
-        >
-          Create Post
-        </button>
-        {errorMsg && <div className='pt-2 text-red-700'>{errorMsg}</div>}
-        {submitError && <div className='pt-2 text-red-700'> {submitError} </div>}
-      </div>
-    </form>
-    </div>
     </div>
  );
 };
